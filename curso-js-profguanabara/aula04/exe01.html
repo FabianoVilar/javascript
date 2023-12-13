@@ -19,9 +19,24 @@
 
   <script>
 
+    /*Obs: para os identificadores existem as seguintes regras:
+    1 - Podem começar com letra, $ ou _
+    2 - "Não" podem começar com números
+    3 - É possível usar letras seguidas de números
+    4 - É possível usar acentos e símbolos
+    5 - "Não" podem conter espaços. No lugar destes, usar o underline (_)
+    6 - "Não"podem ser palavras reservadas.*/
+
+    /* Dicas para nomear identificadores:
+
+    1 - Maiúsculas e minúsculas fazem diferença.
+    2 - Escolher nomes coerentes para as variáveis
+
+    Lembrando que variáveis servem para guardar dados. Os 3 tipos primitivos primordiais são: number, string ("", '', ``) ou boolean (true/false). Porém existem outros tipos primitivos, que será visto em exercícios a seguir.*/
+
     window.alert('Minha primeira mensagem');
-    window.confirm('Está gostando de javaScript?');
-    window.prompt('Qual o seu nome?');
+    window.confirm('Está gostando de javaScript?');//janela com botão ok e cancelar
+    window.prompt('Qual o seu nome?'); /*abre uma caixa para que o usuário interaja digitando alguma coisa*/
 
   </script>
 
