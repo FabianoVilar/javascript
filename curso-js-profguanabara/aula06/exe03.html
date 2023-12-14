@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Meu primeiro programa</title>
+
+  <link rel="stylesheet" href="style03.css">
+
+</head>
+
+<body>
+  
+  <h1>Olá, mundo!</h1>
+  <p>Já me livrei da maldição!</p>
+
+  <script>
+
+    var n1 = Number.parseFloat(window.prompt('Digite um número: '));//o window.prompt recebe o valor em string. Portanto é preciso converter as variáveis n1 e n2 em number.
+    var n2 = Number(window.prompt('Digite outro número '));
+    var s = n1 + n2 // para converter em inteiro usa-se o Number.parseInt(n) e para real o Number.parseFloat(n). OBS. Pode-se utilizar somente o """Number (n)"""" e deixar o parseInt e parseFloat somente para quando desejar especificar se será inteiro ou real.
+    window.alert('A soma dos dois números é: ' + s)
+
+    //Também é possível converter de string para number, utilizando os comandos """String(n)""" ou """n.toString()""".
+
+  </script>
+
+</body>
+
+</html>
