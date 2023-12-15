@@ -22,8 +22,8 @@
     var n1 = Number.parseFloat(window.prompt('Digite um número: '));//o window.prompt recebe o valor em string. Portanto é preciso converter as variáveis n1 e n2 em number.
     var n2 = Number(window.prompt('Digite outro número '));
     var s = n1 + n2 // para converter em inteiro usa-se o Number.parseInt(n) e para real o Number.parseFloat(n). OBS. Pode-se utilizar somente o """Number (n)"""" e deixar o parseInt e parseFloat somente para quando desejar especificar se será inteiro ou real.
-    window.alert('A soma dos dois números é: ' + s)
-
+    window.alert(`A soma entre ${n1} e ${n2} é igual a ${s}`)
+    // Podemos usar no lugar de (+n1 e +n2 ... +s) acima, uma template string (place holder ${n}) quando quisermos interpolar ao invés de concatenar. Porém a string ficará entre crases ( `` ).
     //Também é possível converter de string para number, utilizando os comandos """String(n)""" ou """n.toString()""".
 
   </script>
