@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Primeiros passos com DOM</title><!-- DOM = Document Object Model. Não funciona dentro do Node JS. O DOM está presente quando o javaScript roda no navegador-->
+
+  <!-- Árvore DOM 
+  
+  Raíz - Window (tudo dentro do javaScript está dentro de um objeto chamado Window).
+
+  - Dentro de "window" existem vários objetos, dentre eles o Location (dá a localização do site, a URL, a página atual, a página anterior etc), o Document (documento atual) e o History (que guarda informações, de onde veio, para onde vai etc)
+
+  - Dentro de "Document" existe o objeto chamado HTML.
+
+  - Dentro de "HTML", basicamente, existem 2 objetos (filhos): o Head (cabeçalho) e o Body (corpo)
+
+  E assim por diante-->
+
+  <!-- Existem vários métodos para selecionar os elementos da árvore, dentre eles por "Marca" (tag), por "ID", por "Nome", por "Classe" e por "Seletor" (CSS)-->
+
+  <!-- Para selecionarmos por "Marca, ou seja, por tag, o comando é ( getElementsByTagName )"-->
+
+  <link rel="stylesheet" href="style05.css">
+
+</head>
+
+<body>
+
+  <h1>Iniciando estudos DOM</h1>
+  <p>Aqui vai o resultado</p>
+  <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript</p>
+  <div id="msg">Clique em mim</div>
+
+  <script>
+
+    var d = window.document.getElementById('msg')
+    var corpo = window.document.body
+    var p1 = window.document.getElementsByTagName('p')[0]// o [0] significa que pegará o primeiro parágrafo. [1] o segundo, [2] o terceiro e assim por diante. OBS. O colchetes só será usado quando o Element estiver no plural "ElementS"
+    window.document.write('Está escrito assim: ' + p1.innerText)// aqui estou mandando printar na tela o p1.innertext, o texto que está dentro do primeiro parágrafo. OBS. O innertext pega o texto sem as outras tags, caso haja. No nosso caso existe uma tag "strong" dentro do text. Para que saia na tela é preciso usar o "innerHTML"
+    corpo.style.backgroundColor = 'gray'
+    p1.style.color = 'black'// conseguimos mudar através do script uma informação do CSS, como a cor do primeiro parágrafo e no corpo do texto nestes casos acima (é preciso criar uma variável para o body).
+    
+    
+
+  </script>
+  
+</body>
+
+</html>
