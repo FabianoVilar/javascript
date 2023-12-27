@@ -16,13 +16,27 @@
 
   - Dentro de "Document" existe o objeto chamado HTML.
 
-  - Dentro de "HTML", basicamente, existem 2 objetos (filhos): o Head (cabeçalho) e o Body (corpo)
+  - Dentro de "HTML" (pai/parent), basicamente, existem 2 objetos (filho/child): o Head (cabeçalho) e o Body (corpo)
 
-  E assim por diante-->
+  - Dentro de Head temos várias tags, no caso deste exemplo temos meta e title
+
+  - Dentro de Body também temos várias tags, no caso deste exemplo temos h1, 2 x p, div
+
+  - Dentro do segundo parágrafo existe um child, que é a tag strong.
+
+  Esta é a árvore DOM deste exemplo-->
 
   <!-- Existem vários métodos para selecionar os elementos da árvore, dentre eles por "Marca" (tag), por "ID", por "Nome", por "Classe" e por "Seletor" (CSS)-->
 
-  <!-- Para selecionarmos por "Marca, ou seja, por tag, o comando é ( getElementsByTagName )"-->
+  <!-- Para selecionarmos por "Marca, ou seja, por tagName, o comando é ( getElementsByTagName() )"-->
+
+  <!-- Para selecionarmos pelo "ID", o comando é ( getElementById ())-->
+
+  <!-- Para selecionarmos pelo "Name", o comando é ( getElementsByName ())-->
+
+  <!-- Para selecionarmos pelo "Classe", o comando é ( getElementsByClassName ())-->
+
+  <!-- Para selecionarmos pelo "Seletor", o comando é ( querySeletor () e querySeletorAll ()). OBS. Método mais recente.-->
 
   <link rel="stylesheet" href="style05.css">
 
@@ -34,17 +48,31 @@
   <p>Aqui vai o resultado</p>
   <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript</p>
   <div id="msg">Clique em mim</div>
+  <!--Podemos colocar por name (name='msg'), nesse caso ficaria var d = window.document.getElementsByName('msg')[0]. Por (class='msg') que ficaria var d = window.document.getElementsByClassName('msg')[0]-->
 
   <script>
-
+    /* Podemos adicionar componentes usando o javaScript podemos utilizar  window.document.write('Olá, Mundo') . Também podemos buscar algo e mostrarmos na tela através de window.document.write(window.document.charset) - resposta na tela "UTF-8". Para buscar o navegador atual window.document.write(window.navigator.appName). Para buscar a URL que está acessando window.document.write(window.document.URL). Ou podemos aplicar este comando sem utilizar window, somente como document.write.*/
     var d = window.document.getElementById('msg')
+    // Como seletor podemos usar o comando
+    // var d = window.document.querySelector('div#msg')
     var corpo = window.document.body
-    var p1 = window.document.getElementsByTagName('p')[0]// o [0] significa que pegará o primeiro parágrafo. [1] o segundo, [2] o terceiro e assim por diante. OBS. O colchetes só será usado quando o Element estiver no plural "ElementS"
-    window.document.write('Está escrito assim: ' + p1.innerText)// aqui estou mandando printar na tela o p1.innertext, o texto que está dentro do primeiro parágrafo. OBS. O innertext pega o texto sem as outras tags, caso haja. No nosso caso existe uma tag "strong" dentro do text. Para que saia na tela é preciso usar o "innerHTML"
+    var p1 = window.document.getElementsByTagName('p')[0]
+    // Como Elements está no plural, este comando pegará todas as tags p. Para selecionar uma tag específica é necessário o colchetes. O [0] significa que pegará o primeiro parágrafo. [1] o segundo, [2] o terceiro e assim por diante. OBS. O colchetes só será usado quando o Element estiver no plural "ElementS"
+    window.document.write(p1.innerText)
+    //Também podemos aplicar o comando  window.document.write('Está escrito assim: ' + p1.innerText) 
+    // aqui estou mandando printar na tela o  p1.innertext , o texto que está dentro do primeiro parágrafo, que foi direcionado em colchetes [0]. OBS. O innertext pega o texto sem as outras tags filhas, caso haja. No nosso caso existe uma tag "strong" dentro do texto do segundo parágrafo. Para que saia na tela é preciso usar o "innerHTML".
+
+    p1.style.color = 'blue'
     corpo.style.backgroundColor = 'gray'
-    p1.style.color = 'black'// conseguimos mudar através do script uma informação do CSS, como a cor do primeiro parágrafo e no corpo do texto nestes casos acima (é preciso criar uma variável para o body).
+    // conseguimos mudar através do script uma informação do CSS, como a cor do primeiro parágrafo e no corpo do texto. No caso do corpo do texto (é preciso criar uma variável para o body).
+
+    window.alert(p1.innerHTML)
+    // Podemos utilizar um alerta ao carregar a página.
     
-    
+    d.style.background = 'green'
+    // selecionando elementos através do ID.  var d = window.document.getElementById('msg') 
+
+    // podemos mudar a div o contéudo através de  d.innerText = 'Estou aguardando ... ' , o que mudaria de clique em mim para estou aguardando. Também podemos usar esse comando completo  window.documento.getElementById('msg').innerText = 'Estou aguardando ...'.
 
   </script>
   
