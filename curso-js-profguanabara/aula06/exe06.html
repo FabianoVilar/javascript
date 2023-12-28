@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Evento DOM</title>
+
+  <!--Eventos é tudo que possa acontecer com qualquer elemento, no nosso caso como exemplo está a div abaixo. Ex: Alguns exemplos de eventos de mouse (mouseenter(mover para dentro do elemento), mousemove(mover dentro do elemento), mousedown(precionar o botão do mouse), mouse(soltar o botão do mouse), click(clicar rapidamente no mouse) e mouseout(mover para fora do elemento))-->
+
+  <!-- Referência para ver os eventos dentro de javaScript
+  
+    https://developer.mozilla.org/en-US/docs/Web/Events
+  
+  -->
+
+  <!--Função ou funcionalidade: é um conjunto de códigos (ou linhas) que serão executadas somente quando o evento ocorrer.
+  
+  Bloco: Conjunto de códigos (ou linhas). E é delimitado dentro do sinal de chaves {}. O bloco deve ser nomeado como uma " function " seguida da ação (de eventos) que queremos fazer. Podemos, também, como opção, colocarmos um parâmetro dentro da ação. 
+
+  function ação (parâmetro) {
+    bloco
+  }
+-->
+  <link rel="stylesheet" href="style06.css">
+
+</head>
+
+<body>
+
+  <div id="area">
+    Interaja...
+  </div>
+
+  <!--
+    <div id="area" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()">
+    Interaja...
+  </div>
+  -->
+
+  <!--Além de dispararmos os eventos de interação dentro do HTML, como neste caso, podemos disparar diretamente no javaScript usando as listers, como no exemplo abaixo. Neste caso deixamos o HTML menos poluído e a ligação entre o HTML e javaScript será feita pelo EventListener-->
+  <script>    
+
+    var a = window.document.getElementById('area')
+    a.addEventListener('click', clicar)
+    a.addEventListener('mouseenter', entrar)
+    a.addEventListener('mouseout', sair)
+
+    function clicar() {
+      a.innerText = 'Clicou!' 
+      a.style.background = 'red'    
+    }
+
+    function entrar() {
+      a.innerText = 'Entrou'
+    }
+
+    function sair() {
+      a.innerText = 'Saiu'
+      a.style.background = 'green'
+    }
+
+
+    // OBS IMPORTANTE: Podemos deixar o var a = window.document.getElementById('area') do lado de fora das function. Desta forma ele já serviria para as 3 funções. Mas não é o correto a se fazer. O correto é deixar dentro de cada função.
+
+    // OBS. IMPORTANTE 2 - PARA DESCOBRIRMOS ERROS DENTRO DO CÓDIGO JAVASCRIPT, na maioria dos casos, é só clicar com o botão direito do mouse na tela do navegador, depois em inspect (inspecionar). Abrirá a DevTools. Olhando ao lado da barra onde se encontra escrito Elements, aparecerá o número de erros encontrados. O erro aparecerá no console com o número da linha em que se encontra.
+
+  </script>
+  
+</body>
+
+</html>
