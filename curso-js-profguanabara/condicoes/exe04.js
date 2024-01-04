@@ -1,5 +1,5 @@
-var agora = new Date()
-var horas = agora.getHours()
+var agora = new Date() // para colocar a hora automaticamente do sistema
+var horas = agora.getHours() // para colocar a hora automaticamente do sistema
 console.log(`Agora são exatamente ${horas} horas`)
 
 if (horas >= 7 && horas < 12) {
